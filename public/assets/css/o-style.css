@@ -1,0 +1,186 @@
+.o-card-image-login {
+    max-width: 500px;
+}
+
+.o-card-image-register {
+    max-width: 750px;
+}
+
+.main {
+    background: rgb(233, 230, 223) !important;
+    /* background-image: url('public/img/masjidweb.png'); */
+}
+
+.o-box-shadow {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.divider-text {
+    position: relative;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    color: #8392a5;
+    font-size: 10px;
+    font-weight: 500;
+    font-family: -apple-system, BlinkMacSystemFont, "Inter UI", Roboto, sans-serif;
+    letter-spacing: .5px;
+    margin: 15px 0;
+}
+
+.divider-text::before,
+.divider-text::after {
+    content: '';
+    display: block;
+    flex: 1;
+    height: 1px;
+    background-color: #e5e9f2;
+}
+
+.divider-text::before {
+    margin-right: 10px;
+}
+
+.divider-text::after {
+    margin-left: 10px;
+}
+
+.required:after {
+    color: red;
+    content: " * ";
+}
+
+.card-dashboard {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: 2px solid white;
+    border-radius: 20px;
+    transition: all 0.2s ease;
+}
+
+.form-group {
+    display: grid;
+    grid-template-areas:
+        "label"
+        "input";
+}
+
+.form-group.required .col-form-label:after {
+    content: "*";
+    color: red;
+}
+
+:required+label::after {
+    content: " *";
+    color: teal;
+}
+
+.form-group label {
+    grid-area: label;
+}
+
+.form-group .form-control {
+    grid-area: input;
+}
+
+.card-dashboard:hover {
+    transform: translateY(-5%);
+}
+
+.btn-logout:hover {
+    transform: translateY(-5%);
+}
+
+.text-next:hover {
+    font-weight: bold;
+}
+
+.group-btn-master {
+    width: 30vw;
+    border: 1px solid white;
+    border-radius: 20%;
+}
+
+.btn-master {
+    width: 50%;
+}
+
+.btn-master:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background: #28a745;
+    color: white;
+    font-weight: bold;
+    transform: translateY(-5%);
+}
+
+.btn-view-device:hover {
+    transform: translateY(-5%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.sim-box {
+    /* position: relative; */
+}
+
+.icon-sim-box {
+    position: relative;
+    font-size: 30px;
+}
+
+.icon-sim-box .sim-slot {
+    position: absolute;
+    font-size: 12px;
+    top: 0;
+    left: 15px;
+}
+
+.card-cell-box:hover {
+    transform: translateY(-2%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    opacity: 0.9;
+}
+
+.o-btn-register {
+    width: 120px;
+}
+
+.o-table-number {
+    width: 70px;
+}
+
+.o-search-input {
+    width: 140px;
+}
+
+.o-number-table {
+    width: 60px;
+}
+
+.o-aksi-table {
+    width: 150px;
+}
+
+.o-btn-modal {
+    width: 120px;
+}
+
+.number-table {
+    width: 50px;
+}
+
+.aksi-table {
+    width: 150px;
+}
+
+.btn-action-modal {
+    width: 100px;
+}
+
+.profile-picture {
+    width: 50%;
+    border-radius: 35%;
+    border: 3px solid gray;
+}
+
+.btn-profile {
+    width: 150px;
+}
