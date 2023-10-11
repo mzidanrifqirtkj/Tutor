@@ -45,24 +45,24 @@ Route::get('/auth/logout', [AuthController::class, 'logout'])->name('logout');
 Route::group(['middleware' => ['auth']], function () {
     Route::group(['prefix' => 'dashboard'], function () {
         Route::get('/', [DashboardController::class, 'index']);
-        Route::get('/qonun', [DashboardController::class, 'qonun']);
-        Route::get('/formulir', [DashboardController::class, 'formulir']);
-        Route::get('/formulir_kedua', [DashboardController::class, 'formulir_kedua']);
-        Route::post('/formulir', [PendaftarController::class, 'proses_update']);
-        Route::post('/formulir_kedua', [PendaftarController::class, 'proses_update_kedua']);
-        Route::get('/download', [DashboardController::class, 'download']);
-        Route::get('/downloadberkas', [DashboardController::class, 'downloadberkas']);
-        Route::get('/kabupaten/{id}', [DashboardController::class, 'getKabupaten']);
-        Route::get('/kecamatan/{id}', [DashboardController::class, 'getKecamatan']);
-        Route::get('/kelurahan/{id}', [DashboardController::class, 'getKelurahan']);
+        // Route::get('/qonun', [DashboardController::class, 'qonun']);
+        // Route::get('/formulir', [DashboardController::class, 'formulir']);
+        // Route::get('/formulir_kedua', [DashboardController::class, 'formulir_kedua']);
+        // Route::post('/formulir', [PendaftarController::class, 'proses_update']);
+        // Route::post('/formulir_kedua', [PendaftarController::class, 'proses_update_kedua']);
+        // Route::get('/download', [DashboardController::class, 'download']);
+        // Route::get('/downloadberkas', [DashboardController::class, 'downloadberkas']);
+        // Route::get('/kabupaten/{id}', [DashboardController::class, 'getKabupaten']);
+        // Route::get('/kecamatan/{id}', [DashboardController::class, 'getKecamatan']);
+        // Route::get('/kelurahan/{id}', [DashboardController::class, 'getKelurahan']);
     });
 
     Route::group(['prefix' => 'santri'], function () {
         Route::get('/', [SantriController::class, 'index']);
-        Route::get('/tidak_aktif', [SantriController::class, 'tidak_aktif']);
-        Route::get('/{id}/detail', [SantriController::class, 'detail']);
-        Route::get('/{id}/ubah_status', [SantriController::class, 'ubah_status']);
-        Route::get('/downloadexcel', [SantriController::class, 'downloadexcel']);
+        // Route::get('/tidak_aktif', [SantriController::class, 'tidak_aktif']);
+        // Route::get('/{id}/detail', [SantriController::class, 'detail']);
+        // Route::get('/{id}/ubah_status', [SantriController::class, 'ubah_status']);
+        // Route::get('/downloadexcel', [SantriController::class, 'downloadexcel']);
     });
     Route::group(['prefix' => 'pendaftar'], function () {
         Route::get('/', [PendaftarController::class, 'index']);
