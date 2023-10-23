@@ -28,10 +28,10 @@ Route::get('/', function () {
     // return view('welcome');
     return view('login.login');
 })->name('login');
-Route::get('/login', function () {
-    // return view('welcome');
-    return view('login.login');
-})->name('halaman.login');
+// Route::get('/login', function () {
+//     // return view('welcome');
+//     return view('login.login');
+// })->name('halaman.login');
 
 Route::get('/change_password', [AuthController::class, 'change_password']);
 Route::post('/change_password', [AuthController::class, 'proses_change_password']);

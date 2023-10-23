@@ -12,6 +12,7 @@ use App\Http\Controllers\{
     SantriController,
 };
 use App\Models\Pendaftar;
+use Illuminate\Support\Facades\DB;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,13 @@ use App\Models\Pendaftar;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// Test database connection
+// try {
+//     DB::connection()->getDatabaseName();
+//     die("Iso");
+// } catch (\Exception $e) {
+//     die("Could not connect to the database.  Please check your configuration. error:" . $e );
+// }
 
 Route::get('/', function () {
     // return view('welcome');
@@ -45,16 +53,16 @@ Route::get('/auth/logout', [AuthController::class, 'logout'])->name('logout');
 Route::group(['middleware' => ['auth']], function () {
     Route::group(['prefix' => 'dashboard'], function () {
         Route::get('/', [DashboardController::class, 'index']);
-        // Route::get('/qonun', [DashboardController::class, 'qonun']);
-        // Route::get('/formulir', [DashboardController::class, 'formulir']);
-        // Route::get('/formulir_kedua', [DashboardController::class, 'formulir_kedua']);
-        // Route::post('/formulir', [PendaftarController::class, 'proses_update']);
-        // Route::post('/formulir_kedua', [PendaftarController::class, 'proses_update_kedua']);
-        // Route::get('/download', [DashboardController::class, 'download']);
-        // Route::get('/downloadberkas', [DashboardController::class, 'downloadberkas']);
-        // Route::get('/kabupaten/{id}', [DashboardController::class, 'getKabupaten']);
-        // Route::get('/kecamatan/{id}', [DashboardController::class, 'getKecamatan']);
-        // Route::get('/kelurahan/{id}', [DashboardController::class, 'getKelurahan']);
+        Route::get('/qonun', [DashboardController::class, 'qonun']);
+        Route::get('/formulir', [DashboardController::class, 'formulir']);
+        Route::get('/formulir_kedua', [DashboardController::class, 'formulir_kedua']);
+        Route::post('/formulir', [PendaftarController::class, 'proses_update']);
+        Route::post('/formulir_kedua', [PendaftarController::class, 'proses_update_kedua']);
+        Route::get('/download', [DashboardController::class, 'download']);
+        Route::get('/downloadberkas', [DashboardController::class, 'downloadberkas']);
+        Route::get('/kabupaten/{id}', [DashboardController::class, 'getKabupaten']);
+        Route::get('/kecamatan/{id}', [DashboardController::class, 'getKecamatan']);
+        Route::get('/kelurahan/{id}', [DashboardController::class, 'getKelurahan']);
     });
 
     Route::group(['prefix' => 'santri'], function () {

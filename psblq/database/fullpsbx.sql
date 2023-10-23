@@ -19,7 +19,7 @@ CREATE TABLE IF NOT EXISTS `districts` (
   `id` char(7) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `regency_id` char(4) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `name` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`),
+  UNIQUE (`id`),
   KEY `districts_id_index` (`regency_id`),
   CONSTRAINT `districts_regency_id_foreign` FOREIGN KEY (`regency_id`) REFERENCES `regencies` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
@@ -8029,7 +8029,7 @@ CREATE TABLE IF NOT EXISTS `tb_range_penghasilan` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8_general_ci;
 
 -- Dumping data for table psblq.tb_range_penghasilan: ~3 rows (approximately)
 INSERT INTO `tb_range_penghasilan` (`id`, `range_nominal`, `created_at`, `updated_at`, `deleted_at`) VALUES
