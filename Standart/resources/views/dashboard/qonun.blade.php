@@ -68,9 +68,9 @@
                   <li>Santri boleh bekerja dengan syarat tetap menaati peraturan pondok pesantren.</li>
                   <li>Tidak boleh mengikuti organisasi luar pesantren yang menggangu kegiatan pondok pesantren.
                   </li>
-                  
+
             </ol>
-            
+
             <h6>Peraturan Khusus</h6>
             <h6>Santri Putra</h6>
             <ol>

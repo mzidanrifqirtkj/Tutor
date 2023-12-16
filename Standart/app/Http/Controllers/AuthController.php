@@ -76,4 +76,45 @@ class AuthController extends Controller
             }
         }
     }
+
+    public function proses_register(Request $request)
+    {
+        $validator = validator::make($request->all(), [
+            'email' => 'required|email',
+            'password' => 'required',
+            'name' => 'required',]);
+
+        if ($validator->fails()) {
+            return redirect('')->back()
+                ->withErrors($validator)
+                ->withInput();
+        }
+        request()->validate(
+            [
+                'email' => 'required',
+                'password' => 'required',
+            ]
+        );
+        $emailchecking = User::where('email', $request->email)->first();
+
+        if ($emailchecking) {
+            return redirect('register')->with('error', 'Email Telah digunakan');
+        }
+        if ($request->password != $request->konfirm_password) {
+            return redirect('register')->with('error', 'Konfirmasi Password tidak sesuai');
+        }
+        $user = new User;
+        $user->email = $request->email;
+        $user->name = $request->name;
+        $user->level = 'user';
+        $user->verif_qonun = 'no';
+        $user->password = bcrypt(request('password'));
+        $user->save();
+        $pendaftar = new Pendaftar;
+        $pendaftar->user_id = $user->id;
+        $pendaftar->save();
+        // $mailcek = Mail::to($request->email)->send(new \App\Mail\TestMail($user));
+
+        return redirect('login')->with('success', 'Berhasil Membuat Akun');
+    }
 }
